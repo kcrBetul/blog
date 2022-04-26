@@ -21,9 +21,13 @@ class User extends Authenticatable
         'name',
         'surname',
         'email',
+        'phone',
         'type',
         'password',
         'level',
+        'profile',
+        'cerated_at',
+        'updated_at',
 
     ];
 
@@ -34,15 +38,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
 }

@@ -26,7 +26,7 @@ class="navbar navbar-expand-lg menu_one sticky-nav d-none d-lg-block"
                 <a
                     href="index-2.html"
                     class="nav-link dropdown-toggle"
-                    >Home</a
+                    >Listele</a
                 >
                 <i
                     class="arrow_carrot-down_alt2 mobile_dropdown_icon"
