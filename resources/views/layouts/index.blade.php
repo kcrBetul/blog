@@ -33,7 +33,7 @@
                 <div class="round_spinner">
                     <div class="spinner"></div>
                     <div class="text">
-                        <img src="img/spinner_logo.png" alt="" />
+                        <img src="img/spinner_logo.png" alt=""/>
                         <h4><span>Ama</span></h4>
                     </div>
                 </div>
@@ -46,11 +46,11 @@
 
             <!--================Navbar Area =================-->
            @include("layouts.menu")
-           
-            
+
+
             @yield("content")
-          
-           
+
+
             <!--================Footer Area =================-->
            @include('layouts.footer')
             <!--================End Footer Area =================-->

@@ -1,30 +1,55 @@
-<div>
-    <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Surname</th>
-            <th scope="col">E-mail</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Type</th>
-            <th scope="col">Password</th>
-            <th scope="col">Level</th>
-            <th scope="col">Profile</th>
-          </tr>
-        </thead>
-        <tbody>
-            @foreach($uye as $uyeler)
-          <tr>
-            <td>{{$uyeler->name}}</td>
-            <td>{{$uyeler->surname}}</td>
-            <td>{{$uyeler->email}}</td>
-            <td>{{$uyeler->phone}}</td>
-            <td>{{$uyeler->type}}</td>
-            <td>{{$uyeler->level}}</td>
-            <td>{{$uyeler->profile}}</td>
-          </tr>
-           @endforeach
-        </tbody>
-      </table>
+@extends("layouts.index")
+
+@section('title')
+Üye
+@endsection
+
+@section('css')
+<style>
+  .table{
+    color:white;
+    background-color:#0a1124;;
+  }
+  .card{
+    background-color: #0a1124;
+  }
+</style>
+@endsection
+@section('content')
+<br><br><br><br><br>
+<div class="card mt-5">
+    <div class="card-body">
+        <h5 class="card-title"> <a class="btn btn-sm btn-danger"></a>Üyeler listesi</h5>
+        <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Surname</th>
+                      <th>E-mail</th>
+                      <th>Phone</th>
+                      <th>Type</th>
+                      <th>Level</th>
+                      <th>Profile</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      @foreach($uyeler as $uye)
+                    <tr>
+                      <td>{{$uye->name}}</td>
+                      <td>{{$uye->surname}}</td>
+                      <td>{{$uye->email}}</td>
+                      <td>{{$uye->phone}}</td>
+                      <td>{{$uye->type}}</td>
+                      <td>{{$uye->level}}</td>
+                      <td>{{$uye->profile}}</td>
+                    </tr>
+                     @endforeach
+                  </tbody>
+          </table>
+      {{-- {{$uyeler->links()}} --}}
+    </div>
 </div>
+@endsection
+
+
+

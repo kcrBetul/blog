@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use  App\Http\Controllers\UserController;
+use  App\Http\Controllers\Admin\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +20,10 @@ Route::get('/', function () {
 Route::get('/anasayfa', function () {
     return view('homepage');
 });
-Route::group(['middleware'=>['auth','İsAdmin'],'prefix'=>'admin'],function(){
+Route::group(['middleware'=>['IsAdmin'],'prefix'=>'admin'],function(){
 
     Route::get('uyeler/{id}', [UserController::class, 'destory'])->whereNumber('id')->name('uyeler.destroy');
-    Route::resource('uyeler', components\admin\UserController::class);
+    Route::get('uyeler', [UserController::class, 'index']);
+
 
 });
