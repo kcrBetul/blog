@@ -17,12 +17,15 @@
         <link rel="stylesheet" href="{{asset("assets/elagent-icon/style.css")}}" />
         <link rel="stylesheet" href="{{asset("assets/assets/niceselectpicker/nice-select.css")}}" />
         <link rel="stylesheet" href="{{asset("assets/animation/animate.css") }}"/>
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}" type="text/css">
+        <script src="https://kit.fontawesome.com/747cb2fb37.js" crossorigin="anonymous"></script>
         <link
             rel="stylesheet"
             href="{{ asset("assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css") }}"
         />
         <link rel="stylesheet" href="{{asset("assets/css/style-main.css")}}" />
         <link rel="stylesheet" href="{{asset("assets/css/responsive.css")}}" />
+
         <title>@yield("title")</title>
         @yield("css")
     </head>
