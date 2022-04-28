@@ -4,12 +4,12 @@
             <img
                 class="wow fadeInLeft"
                 data-wow-delay="0.5s"
-                src="img/footer/shape-1.png"
+                src="/assets/img/footer/shape-1.png"
                 alt=""
             />
         </div>
         <div class="shape">
-            <img src="img/footer/shape-2.png" alt="" />
+            <img src="/assets/img/footer/shape-2.png" alt="" />
         </div>
     </div>
     <div class="container">
@@ -18,7 +18,7 @@
                 <div class="col-lg-4 col-sm-6 wow fadeInLeft">
                     <div class="footer-widget pr-20">
                         <a href="#">
-                            <img src="img/logo-w.png" alt="logo"
+                            <img src="/assets/img/logo-w.png" alt="logo"
                         /></a>
                         <p class="f-text mt-55">
                             Join with your email address
