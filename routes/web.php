@@ -24,6 +24,7 @@ Route::group(['middleware'=>['IsAdmin'],'prefix'=>'admin'],function(){
 
     Route::get('uyeler/{id}', [UserController::class, 'destory'])->whereNumber('id')->name('uyeler.destroy');
     Route::get('uyeler', [UserController::class, 'index']);
+    Route::get('uyeler/yeni', [UserController::class, 'create'])->name("uyeler.create");
 
 
 });
