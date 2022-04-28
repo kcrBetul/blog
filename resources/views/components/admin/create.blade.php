@@ -5,20 +5,12 @@
 @endsection
 
 @section('css')
-<style>
-  .table{
-    color:white;
-    background-color:#0a1124;;
-  }
-  .card{
-    background-color: #0a1124;
-  }
-</style>
 @endsection
+
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{route('uyeler.store')}}" method="post">
+        <form  method="post">
         @csrf
         <div class="form-group">
             <label>İsim </label>
