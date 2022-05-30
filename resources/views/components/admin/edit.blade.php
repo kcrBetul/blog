@@ -97,106 +97,96 @@
             </ul>
           </div>
         </div>
+
         <div class="col-xl-7 pe-xl-0 ps-xxl-4">
-          <div class="add-question-widget">
-
-            <h4 class="widget-title">Üye Ekle</h4>
-            <form action="{{route('uyeler.store')}}" method="POST">
-                @csrf
-              <div class="mt-30">
-                <label class="label" for="inp_nam">Name<span>*</span></label>
-                <div class="icon-input-group">
-                  <input class="form-control" type="text" id="inp_nam" name="name" value="{{old('name')}}" />
-                  <i class="icon_chat_alt"></i>
-                </div>
-                <div class="instruction">
-                  Please choose an appropriate title for the equation so
-                  it can be answered easily.
-                </div>
-              </div>
-              <div class="mt-25">
-                <label class="label" for="inp_sur">Surname <span>*</span></label>
-                <div class="icon-input-group">
-                    <input class="form-control" type="text" id="inp_sur" name="surname" value="{{old('surname')}}" />
-                    <i class="icon_chat_alt"></i>
-                  </div>
-                <div class="instruction">
-                  Please choose an appropriate title for the equation so
-                  it can be answered easily.
-                </div>
-              </div>
-              <div class="mt-25">
-                <label class="label" for="inp_email">E-mail <span>*</span></label>
-                <div class="icon-input-group">
-                  <input class="form-control" type="text" id="inp_email" name="email" value="{{old('email')}}" />
-                  <i class="icon_tags"></i>
-                </div>
-              </div>
-
-              <div class="mt-25">
-                <label class="label" for="inp_pho">Phone<span>*</span></label>
-                <div class="icon-input-group">
-                    <input class="form-control" type="text" id="inp_pho" name="phone"  value="{{old('phone')}}"/>
-                    <i class="icon_tags"></i>
-                  </div>
-                <div class="instruction">
-                  Please choose an appropriate title for the equation so
-                  it can be answered easily.
-                </div>
-              </div>
-              <div class="mt-25">
-                <label class="label" for="inp_typ">Type <span>*</span></label>
-                <div class="icon-input-group">
-                  <select id="inp_typ" class="custom-select form-control" name="type" value="{{old('type')}}">
-                      <option value="0"></option>
-                    <option value="Admin">1</option>
-                    <option value="Üye">2</option>
-                  </select>
-                  <i class="icon_folder-open"></i>
-                </div>
-                <div class="mt-30">
-                    <label class="label" for="inp_pass">Password<span>*</span></label>
-                    <div class="icon-input-group">
-                      <input class="form-control" type="text" id="inp_pass" name="password" value="{{old('password')}}"/>
-                      <i class="icon_chat_alt"></i>
+            <div class="add-question-widget">
+                <h4 class="widget-tittle">Üye Güncelleme</h4>
+                <form action="{{route('uyeler.update',$uye->id)}}" method="POST">
+                    @method('PUT')
+                    @csrf
+                    <div class="mt-30">
+                        <label for="in-title" class="label">Name <span>*</span></label>
+                        <div class="icon-input-group">
+                            <input type="text" class="form-control" name="name" value="{{$uye->name}}">
+                            <i class="icon_chat_alt"></i>
+                        </div>
+                        <div class="instruction">
+                            Plase chase an appropriate title for the equation so it can be answered easily.
+                        </div>
                     </div>
-                    <div class="instruction">
-                      Please choose an appropriate title for the equation so
-                      it can be answered easily.
+                    <div class="mt-25">
+                        <label for="inp_category" class="label">Surname <span>*</span></label>
+                        <div class="icon-input-group">
+                            <input type="text" name="surname" id="inp_sur" class="form-control" value="{{$uye->surname}}">
+                            <i class="icon_char_alt"></i>
+                        </div>
+                        <div class="instruction">
+                            Plase chase an approptiate title for the equation so it can be answered aesily.
+                        </div>
                     </div>
-                  </div>
-                  <div class="mt-30">
-                    <label class="label" for="inp_lev">Level<span>*</span></label>
-                    <div class="icon-input-group">
-                      <input class="form-control" type="text" id="inp_lev" name="level" value="{{old('level')}}" />
-                      <i class="icon_chat_alt"></i>
+                    <div class="mt-25">
+                        <label for="inp_tag" class="label">E-mail <span>*</span></label>
+                        <div class="icon-input-group">
+                            <input type="text" name="email" id="inp_tag" class="form-control" value="{{$uye->email}}">
+                        </div>
                     </div>
-                    <div class="instruction">
-                      Please choose an appropriate title for the equation so
-                      it can be answered easily.
+                    <div class="mt-25">
+                        <label for="inp_desc" class="label">Phone <span>*</span></label>
+                        <div class="icon-input-group">
+                            <input type="text" name="phone" class="form-control" id="inp_desc" value="{{$uye->phone}}">
+                            <i class="icon-tags"></i>
+                        </div>
+                        <div class="instruction">
+                            Plase chase approptiate title for the equation so it can be answered easily.
+                        </div>
                     </div>
-                  </div>
-                  <div class="mt-30">
-                    <label class="label" for="inp_prof">Profile<span>*</span></label>
-                    <div class="icon-input-group">
-                      <input class="form-control" type="text" id="inp_prof" name="profile" value="{{old('profile')}}"/>
-                      <i class="icon_chat_alt"></i>
+                    <div class="mt-25">
+                        <label for="" class="label">Type <span>*</span></label>
+                        <div class="icon-input-group">
+                            <select name="type" id="inp_category" class="custom-select form-control" value="{{$uye->type}}">
+                            <option value="Admin">1</option>
+                            <option value="Üye">2</option>
+                            </select>
+                            <i class="icon-folder-open"></i>
+                        </div>
+                        <div class="mt-30">
+                            <label for="inp_title" class="label">Password <span>*</span></label>
+                            <div class="icon-input-group">
+                                <input type="text" name="password" class="form-cotrol" id="inp_title" value="{{$uye->password}}">
+                                <i class="icon_chat_alt"></i>
+                            </div>
+                            <div class="instruction">
+                                Plase choose an appropriate title for the equation so it can be answered easily.
+                            </div>
+                        </div>
+                        <div class="mt-30">
+                            <label for="inp_title" class="label">Level <span>*</span></label>
+                        </div>
+                        <div class="icon-input-group">
+                            <input type="text" id="inp_title" name="level" class="form-control" value="{{$uye->level}}">
+                            <i class="icon_chat_alt"></i>
+                        </div>
+                        <div class="instruction">
+                            Plase choose an appropriate title for the equation so it can be answered easily.
+                        </div>
                     </div>
-                    <div class="instruction">
-                      Please choose an appropriate title for the equation so
-                      it can be answered easily.
+                    <div class="mt-30">
+                        <label for="inp_title" class="label">Profile <span>*</span></label>
+                        <div class="icon-input-group">
+                            <input type="text" id="inp_title" name="profile" class="form-control" value="{{$uye->profile}}">
+                            <i class="icon_chat_alt"></i>
+                        </div>
+                        <div class="instruction">
+                            Plase choose an appropriate title for the equation so it can be answered easily.
+                        </div>
                     </div>
-                  </div>
-                <div class="d-flex justify-content-between mt-60">
-
-                  <button class="cancel_btn">Temizle</button>
-
-                  <button class="btn btn-success btn-lg btn-block" type="submit">Kaydet</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+                    <div class="d-flex justify-content-between mt-60">
+                        <button class="cancel_btn">Değiştir</button>
+                        <button class="btn btn-success btn-lg btn-block" type="update">GÜNCELLE</button>
+                    </div>
+                </form>
+            </div>
+            </div>
         <div class="col-xl-3">
           <div class="forum-right-sidebar-widget question-sidebar">
             <a href="#" class="action_btn custom-sidebar-btn w-100">Ask Question</a>
