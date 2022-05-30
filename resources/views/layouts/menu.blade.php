@@ -1,17 +1,15 @@
-<nav
-class="navbar navbar-expand-lg menu_one sticky-nav d-none d-lg-block"
->
+<nav class="navbar navbar-expand-lg menu_one sticky-nav d-none d-lg-block">
 <div class="container">
     <a class="navbar-brand header_logo" href="index-2.html">
         <img
             class="first_logo sticky_logo"
-            src="img/logo.png"
+            src="/assets/img/logo.png"
             srcset="img/logo-2x.png 2x"
             alt="logo"
         />
         <img
             class="white_logo main_logo"
-            src="img/logo-w.png"
+            src="/assets/img/logo-w.png"
             srcset="img/logo-w2x.png 2x"
             alt="logo"
         />
@@ -24,53 +22,27 @@ class="navbar navbar-expand-lg menu_one sticky-nav d-none d-lg-block"
         <ul class="navbar-nav menu ms-auto">
             <li class="nav-item dropdown submenu active">
                 <a
-                    href="index-2.html"
+                    href="{{route('uyeler.index')}}"
                     class="nav-link dropdown-toggle"
-                    >Listele</a
-                >
+                    >Users</a>
+
                 <i
                     class="arrow_carrot-down_alt2 mobile_dropdown_icon"
                     aria-hidden="false"
                     data-bs-toggle="dropdown"
                 ></i>
-                <ul class="dropdown-menu">
-                    <li class="nav-item active">
-                        <a href="index-2.html" class="nav-link"
-                            >Demo 01</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a href="index-3.html" class="nav-link"
-                            >Demo 02</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a href="index-4.html" class="nav-link"
-                            >Demo 03</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a href="index-5.html" class="nav-link"
-                            >Demo 04</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a href="index-6.html" class="nav-link"
-                            >Demo 05</a
-                        >
-                    </li>
-                </ul>
+
             </li>
             <li class="nav-item dropdown submenu">
                 <a
                     class="nav-link dropdown-toggle"
-                    href="#"
+                    href="{{route('etiketler.index')}}"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                 >
-                    Pages
+                   Labels
                 </a>
                 <i
                     class="arrow_carrot-down_alt2 mobile_dropdown_icon"
@@ -116,13 +88,13 @@ class="navbar navbar-expand-lg menu_one sticky-nav d-none d-lg-block"
             <li class="nav-item dropdown submenu">
                 <a
                     class="nav-link dropdown-toggle"
-                    href="forums.html"
+                    href="{{route('konular.index')}}"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                 >
-                    Forum
+                 Topics
                 </a>
                 <i
                     class="arrow_carrot-down_alt2 mobile_dropdown_icon"
@@ -239,16 +211,20 @@ class="navbar navbar-expand-lg menu_one sticky-nav d-none d-lg-block"
                 </ul>
             </li>
         </ul>
+
+
+
+
         <div class="right-nav">
+
             <a
                 class="action_btn btn_small_two btn-text-medium round-btn-2"
-                href="#"
-                >Sign In</a
-            >
+                href="{{route('admin.logouth')}}"
+                >Logout</a>
+
             <div
                 class="px-2 js-darkmode-btn"
-                title="Toggle dark mode"
-            >
+                title="Toggle dark mode">
                 <label for="something" class="tab-btn tab-btns">
                     <ion-icon name="moon"></ion-icon>
                 </label>
@@ -264,6 +240,7 @@ class="navbar navbar-expand-lg menu_one sticky-nav d-none d-lg-block"
                 />
             </div>
         </div>
+
     </div>
 </div>
 </nav>

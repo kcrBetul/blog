@@ -87,8 +87,7 @@
         <div class="footer-bottom pt-40 pb-40">
             <div class="d-flex justify-content-between flex-wrap">
                 <p class="wow fadeInRight">
-                    Copyright 2021, All Rights Reserved
-                </p>
+                    Copyright 2021, All Rights Reserved</p>
                 <ul
                     class="footer-menu list-unstyled wow fadeInLeft"
                 >
