@@ -17,8 +17,8 @@ class IsAdmin
     public function handle(Request $request, Closure $next)
     {
 
-        if(isset(auth()->user()->type) && auth()->user()->type!=='admin'){
-            return redirect()->route('deshboard');
+        if(isset(auth()->user()->type) && auth()->user()->type!=='Admin'){
+            return route('admin.login');
         }
         return $next($request);
     }
