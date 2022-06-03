@@ -101,9 +101,9 @@
         <div class="col-xl-7 pe-xl-0 ps-xxl-4">
             <div class="add-question-widget">
                 <h4 class="widget-tittle">Üye Güncelleme</h4>
-                <form action="{{route('uyeler.update',$uye->id)}}" method="POST">
-                    @method('PUT')
+                <form action="{{route('uyeler.update')}}" method="POST">
                     @csrf
+                    <input type="hidden" name="id" value="{{ $uye->id }}">
                     <div class="mt-30">
                         <label for="in-title" class="label">Name <span>*</span></label>
                         <div class="icon-input-group">
@@ -182,7 +182,7 @@
                     </div>
                     <div class="d-flex justify-content-between mt-60">
                         <button class="cancel_btn">Değiştir</button>
-                        <button class="btn btn-success btn-lg btn-block" type="update">GÜNCELLE</button>
+                        <button class="btn btn-success btn-lg btn-block" type="submit">GÜNCELLE</button>
                     </div>
                 </form>
             </div>

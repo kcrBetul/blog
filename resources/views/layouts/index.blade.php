@@ -69,7 +69,6 @@
                 <div class="row pt-120 pb-30">
                     <div class="col-lg-9 doc_banner_content search-banner-light text-center mx-auto pt-20">
                         <h1 class="banner-title-h1 mb-4">Need some help with Ama?</h1>
-
                         <form action="#" class="header_search_form-2 mx-auto">
                             <div class="header_search_form_info">
                                 <div class="form-group">

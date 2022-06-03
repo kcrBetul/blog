@@ -53,7 +53,7 @@
                         <div class="divider">
                             <span class="or-text">veya</span>
                         </div>
-                        <form action="{{route('uyeler.store')}}" class="row login_form" method="POST">
+                        <form action="{{route('uyeler.kayit')}}" class="row login_form" method="POST">
                             @csrf
                             <div class="col-sm-6 form-group">
                                 <div class="small_text">Nmae</div>

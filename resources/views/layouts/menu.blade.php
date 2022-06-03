@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg menu_one sticky-nav d-none d-lg-block">
 <div class="container">
-    <a class="navbar-brand header_logo" href="index-2.html">
+    <a class="navbar-brand header_logo" href="{{route('admin.index')}}">
         <img
             class="first_logo sticky_logo"
             src="/assets/img/logo.png"
@@ -12,7 +12,7 @@
             src="/assets/img/logo-w.png"
             srcset="img/logo-w2x.png 2x"
             alt="logo"
-        />
+        /> Betül
     </a>
 
     <div
@@ -166,6 +166,53 @@
             <li class="nav-item dropdown submenu">
                 <a
                     class="nav-link dropdown-toggle"
+                    href="{{route('dosyalar.index')}}"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Topics File
+                </a>
+                <i
+                    class="arrow_carrot-down_alt2 mobile_dropdown_icon"
+                    aria-hidden="false"
+                    data-bs-toggle="dropdown"
+                ></i>
+                <ul class="dropdown-menu">
+                    <li class="nav-item">
+                        <a
+                            href="blog-grid.html"
+                            class="nav-link"
+                            >Blog Grid</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="blog-grid-two.html"
+                            class="nav-link"
+                            >Blog Grid Two</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="blog-list.html"
+                            class="nav-link"
+                            >Blog List</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="blog-single.html"
+                            class="nav-link"
+                            >Blog Details</a
+                        >
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown submenu">
+                <a
+                    class="nav-link dropdown-toggle"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -262,13 +309,13 @@
             <a class="navbar-brand header_logo" href="index-2.html">
                 <img
                     class="sticky_logo"
-                    src="img/logo.png"
+                    src="/assets/img/logo.png"
                     srcset="img/logo-2x.png 2x"
                     alt="logo"
                 />
                 <img
                     class="main_logo white_logo"
-                    src="img/logo-w.png"
+                    src="/assets/img/logo-w.png"
                     srcset="img/logo-w2x.png 2x"
                     alt="logo"
                 />
@@ -310,17 +357,17 @@
         <div class="mobile_logo">
             <a
                 class="navbar-brand header_logo me-0"
-                href="index-2.html"
+                href="{{route('admin.index')}}"
             >
                 <img
                     class="sticky_logo main_logo"
-                    src="img/logo.png"
+                    src="/assets/img/logo.png"
                     srcset="img/logo-2x.png 2x"
                     alt="logo"
                 />
                 <img
                     class="white_logo"
-                    src="img/logo-w.png"
+                    src="/assets/img/logo-w.png"
                     srcset="img/logo-w2x.png 2x"
                     alt="logo"
                 />
@@ -332,9 +379,9 @@
             <ul class="navbar-nav menu ms-auto">
                 <li class="nav-item dropdown submenu active">
                     <a
-                        href="index-2.html"
+                        href="{{route('uyeler.index')}}"
                         class="nav-link dropdown-toggle"
-                        >Home</a
+                        >Users</a
                     >
                     <i
                         class="arrow_carrot-down_alt2 mobile_dropdown_icon"
@@ -368,8 +415,8 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown submenu">
-                    <a class="nav-link dropdown-toggle" href="#">
-                        Pages
+                    <a class="nav-link dropdown-toggle" href="{{route('etiketler.index')}}">
+                       Labels
                     </a>
                     <i
                         class="arrow_carrot-down_alt2 mobile_dropdown_icon"
@@ -413,9 +460,9 @@
                 <li class="nav-item dropdown submenu">
                     <a
                         class="nav-link dropdown-toggle"
-                        href="forums.html"
+                        href="{{route('konular.index')}}"
                     >
-                        Forum
+                        Topics
                     </a>
                     <i
                         class="arrow_carrot-down_alt2 mobile_dropdown_icon"

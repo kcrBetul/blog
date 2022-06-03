@@ -157,51 +157,51 @@ Etiket
                     <div class="topics-filter d-xl-none">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
-                                    <ion-icon name="earth-outline"></ion-icon>View all
+                                <a class="nav-link " href="#">
+                                    <ion-icon name="earth-outline"></ion-icon> View all
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <ion-icon name="swap-horizontal-outline"></ion-icon>General
+                                    <ion-icon name="swap-horizontal-outline"></ion-icon> General
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <ion-icon name="bulb-outline"></ion-icon>Ideas
+                                    <ion-icon name="bulb-outline"></ion-icon> Ideas
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <ion-icon name="bulb-outline"></ion-icon>User Feedback
+                                    <ion-icon name="bulb-outline"></ion-icon> User Feedback
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div class="form_l_inner">
                         <table class="table">
-                            <div class="form_head d-flex just-content-between">
+                            <div class="forum_head d-flex justify-content-between ">
+
                                 <thead>
                                     <tr>
-                                        <th><strong></strong>Name</th>
-                                        <th><strong></strong>İşlemler</th>
+                                        <th><strong>Name</strong></th>
+                                        <th><strong>İşemler</strong></th>
 
                                     </tr>
-                                </thead>
+                                  </thead>
                             </div>
+
                             <div class="forum_body">
                                 <tbody>
-                                    @foreach ($etiketler as $etiket)
-                                     <tr>
-                                         <td>
-                                            {{ $etiket->name}}
-                                         </td>
-                                         <td>
-                                             <a href="{{route('etiketler.edit',[$etiket->id])}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
-                                             <a href="{{route('etiketler.destroy',[$etiket->id])}}" class="btn btn-danger"><i class="fa fa-times"></i></a>
-                                         </td>
-                                    </tr>
-                                    @endforeach
+                                    @foreach ($etiketler as $etiket )
+                                  <tr>
+                                    <td>{{$etiket->name}}</td>
+                                    <td>
+                                        <a href="{{route('etiketler.edit',[$etiket->id])}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                        <a href="{{route('etiketler.destroy',[$etiket->id])}}"  class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                    </td>
+                                  </tr>
+                                  @endforeach
                                 </tbody>
                             </div>
                         </table>

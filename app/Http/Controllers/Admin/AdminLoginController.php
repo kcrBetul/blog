@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\Validator;
 
 class AdminLoginController extends Controller
 {
-   public function __construct()
-   {
-
-   }
 
    public function login()
    {
@@ -30,7 +26,7 @@ class AdminLoginController extends Controller
         ],[
             'email.required' => 'email alanı gerekli',
             'email.email' => 'geçerli bir eposta girin.',
-            'password.required' => 'Şisre boş bırakılamaz.',
+            'password.required' => 'Şifre boş bırakılamaz.',
 
         ]);
 
@@ -55,8 +51,10 @@ class AdminLoginController extends Controller
        }
 
 
-    return redirect()->back()->withhInput($request->only('email', 'remember'));
+     return redirect()->back()->withhInput($request->only('email', 'remember'));
    }
+
+
 }
 
 

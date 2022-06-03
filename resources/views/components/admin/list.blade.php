@@ -217,7 +217,6 @@
                               </tr>
                               @endforeach
                             </tbody>
-
                         </div>
                     </table>
                        <h5 class="card-title mt-2"> <a href="{{route('uyeler.create')}}" class="btn btn-sm btn-danger">Üyeler Ekle</a></h5>
