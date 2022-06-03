@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
    public function ___construct()
    {
-
+       $this->middleware('auth:admin');
    }
    public function index()
    {
