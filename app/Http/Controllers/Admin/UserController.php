@@ -6,6 +6,7 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 
 
 class UserController extends Controller
@@ -31,6 +32,7 @@ class UserController extends Controller
     public function create()
     {
         return view('components.admin.create');
+
     }
 
     /**
@@ -41,6 +43,38 @@ class UserController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
+
+        $validator = validator::make($request->all(),
+        [
+            'name' => 'required|name',
+            'surname' => 'required|surname',
+            'email' => 'required|email',
+            'phone' => 'required|phone',
+            'type' => 'required|type',
+            'password' => 'required',
+            'level' => 'required|level',
+
+
+        ],[
+            'name.required' => 'Name alanı boş bırakılaz.',
+            'name.name' => 'Lütfen isim giriniz.',
+            'surname.required' => 'Surname alanı boş bırakılamaz.',
+            'surname.surname' => 'Lütfen soyisminizi giriniz.',
+             'email.rquired' => 'Email alanı boş bırakılaz.',
+             'email.email' => 'Lütfen emailinizi giriniz.',
+             'phone.required' => 'Phone alanı boş bırakılamaz.',
+             'phone.phone' => 'Lütfen telefon numaranızı giriniz.',
+             'type.required' => 'Type alanı boş bırakılamaz.',
+             'type.type' => 'Lütfen Veri giriniz.',
+             'password.required' => 'password alanı boş bırakılamaz.',
+             'level.required' => 'Level alanı boş bırakılamz.',
+             'level.level' => 'Lütfen veri giriniz.',
+
+
+
+        ]);
+
+
 
     $veri = [
         'name' => $request->name,
@@ -59,6 +93,25 @@ class UserController extends Controller
 
 
     }
+
+    public function kayit(UserCreateRequest $request){
+
+      $veri = [
+        'name' => $request->name,
+        'surname' => $request->surname,
+        'email' => $request->email,
+        'phone' => $request->phone,
+        'type' => $request->type,
+        'password' => md5($request->password),
+        'level' => $request->level,
+        'profile' => $request->profile,
+
+    ];
+  User::create($veri);
+  return redirect()->route('admin.kayit');
+
+    }
+
 
     /**
      * Display the specified resource.
@@ -101,10 +154,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserUpdateRequest $request, $id)
+    public function update(Request $request)
     {
-
-      $update = ([
+      $update = [
             'name' => $request->name,
             'surname' => $request->surname,
             'email' => $request->email,
@@ -113,10 +165,17 @@ class UserController extends Controller
             'password' => md5($request->password),
             'level' => $request->level,
             'profile' => $request->profile,
-        ]);
+        ];
 
-        User::whereId($id)->update($update);
-        return redirect()->route('uyeler.index', $id);
+        $user = User::where('id', $request->id)->first();
+
+        if($user){
+
+            $user->update($update);
+            return redirect()->route('uyeler.index', $request->id);
+        }
+
+        return redirect()->route('uyeler.index', $request->id);
 
     }
 

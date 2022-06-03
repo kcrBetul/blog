@@ -9,8 +9,7 @@ use  App\Http\Controllers\Admin\LabelUpdateRequest;
 use  App\Http\Controllers\Admin\TopicController;
 use  App\Http\Controllers\Admin\LoginController;
 use  App\Http\Controllers\Admin\AdminLoginController;
-
-
+use App\Http\Controllers\Admin\TFileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +26,7 @@ Route::get('deneme', function () {
     return view('layouts.index');
 });
 
-Route::get('/anasayfa', function () {
-    return view('homepage');
-    })->name('admin.index');
+
 
 Route::get('üyeol', function(){
     return view('components.admin.kayit');
@@ -46,16 +43,22 @@ Route::post('logout', [LoginController::class, 'logout'])->name('admin.logouth')
 Route::get('logout', [LoginController::class, 'logout'])->name('admin.logouth');
 
 
-Route::group(['middleware'=>['IsAdmin'],'prefix'=>'admin'],function(){
 
+
+Route::group(['middleware'=>['IsAdmin', 'isLogin'],'prefix'=>'admin'],function(){
+
+    Route::get('/anasayfa', function () {
+        return view('homepage');
+    })->name('admin.index');
         #Users Rotaları#
-    Route::get('uyeler', [UserController::class, 'index'])->name('uyeler.index');
-    Route::get('uyeler/yeni', [UserController::class, 'create'])->name("uyeler.create");
-    Route::get('uyeler/kayit', [UserController::class, 'store'])->name('uyeler.store');
-    Route::post('uyeler/kayit', [UserController::class, 'store'])->name('uyeler.store');
-    Route::get('uyeler/{id}/edit', [UserController::class, 'edit'])->name('uyeler.edit');
-    Route::put('uyeler/güncelle{id}',[UserController::class, 'update'])->name('uyeler.update');
-    Route::get('uyeler/sil{id}', [UserController::class, 'destroy'])->whereNumber('id')->name('uyeler.destroy');
+    Route::get('/uyeler', [UserController::class, 'index'])->name('uyeler.index');
+    Route::get('/uyeler/yeni', [UserController::class, 'create'])->name("uyeler.create");
+    Route::get('/uyeler/kayit', [UserController::class, 'store'])->name('uyeler.store');
+    Route::post('/uyeler/kayit', [UserController::class, 'store'])->name('uyeler.store');
+    Route::post('/uyeler/giris', [UserController::class, 'kayit'])->name('uyeler.kayit');
+    Route::get('/uyeler/{id}/edit', [UserController::class, 'edit'])->name('uyeler.edit');
+    Route::post('/uyeler/güncelle',[UserController::class, 'update'])->name('uyeler.update');
+    Route::get('/uyeler/sil{id}', [UserController::class, 'destroy'])->whereNumber('id')->name('uyeler.destroy');
 
        #Labels Rotaları#
     Route::get('etiketler', [LabelController::class,'index'])->name('etiketler.index');
@@ -74,6 +77,11 @@ Route::group(['middleware'=>['IsAdmin'],'prefix'=>'admin'],function(){
     Route::get('konular/{id}/edit',[TopicController::class,'edit'])->name('konular.edit');
     Route::put('konular/güncel{id}',[TopicController::class,'update'])->name('konular.update');
     Route::get('konular/sil{id}',[TopicController::class,'destroy'])->whereNumber('id')->name('konular.destroy');
+
+    // Topics_File
+    Route::get('dosyalar', [TFileController::class,'index'])->name('dosyalar.index');
+
+
 
 
 
